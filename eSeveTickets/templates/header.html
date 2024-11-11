@@ -1,0 +1,75 @@
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static "css/header.css" %}">
+{% endblock styles %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'images/ganeshLogo.png' %}" alt="" class="navbar-logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto"> <!-- mx-auto to center the items -->
+  
+            <!-- Profile -->
+            <li class="nav-item {% if request.path == '/profile/' %}active{% endif %}">
+              <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+            </li>
+    
+            <!-- Masters -->
+            <li class="nav-item {% if request.path == '/masters/' %}active{% endif %}">
+              <a class="nav-link" href="{% url 'masters' %}">Masters / ಮಾಸ್ಟರ್</a>
+            </li>
+    
+            <!-- Seva and Kaanike Dropdown -->
+            <li class="nav-item dropdown {% if request.path == '/seva/' or request.path == '/kaanike/' %}active{% endif %}">
+              <a class="nav-link dropdown-toggle" href="#" id="sevaKaanikeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Seva & Kaanike / ಸೇವೆ & ಕಾಣಿಕೆ
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="sevaKaanikeDropdown">
+                <li><a class="dropdown-item {% if request.path == '/seva/' %}active{% endif %}" href="{% url 'seva' %}">Seva / ಸೇವೆ</a></li>
+                <li><a class="dropdown-item {% if request.path == '/kaanike/' %}active{% endif %}" href="{% url 'kaanike' %}">Kaanike / ಕಾಣಿಕೆ</a></li>
+              </ul>
+            </li>
+    
+            <!-- Movable -->
+            <li class="nav-item {% if request.path == '/movable/' %}active{% endif %}">
+              <a class="nav-link" href="{% url 'movable' %}">Movable / ಚಲನೀಯ</a>
+            </li>
+    
+            <!-- Immovable -->
+            <li class="nav-item {% if request.path == '/immovable/' %}active{% endif %}">
+              <a class="nav-link" href="{% url 'immovable' %}">Immovable / ಸ್ಥಿರ</a>
+            </li>
+    
+            <!-- Provision -->
+            <li class="nav-item {% if request.path == '/provision/' %}active{% endif %}">
+              <a class="nav-link" href="{% url 'provision' %}">Provision / ದಿನಸಿ</a>
+            </li>
+    
+            <!-- Reports Dropdown -->
+            <li class="nav-item dropdown {% if request.path == '/pooja-report/' or request.path == '/user-report/' %}active{% endif %}">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Reports / ವರದಿಗಳು
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item {% if request.path == '/pooja-report/' %}active{% endif %}" href="{% url 'pooja_report' %}">Pooja Report / ಪೂಜಾ ವರದಿ</a></li>
+                <li><a class="dropdown-item {% if request.path == '/user-report/' %}active{% endif %}" href="{% url 'user_report' %}">User Report / ಬಳಕೆದಾರ ವರದಿ</a></li>
+              </ul>
+            </li>
+    
+            <!-- Inc-Exp -->
+            <li class="nav-item {% if request.path == '/inc-exp/' %}active{% endif %}">
+              <a class="nav-link" href="{% url 'inc_exp' %}">Inc-Exp / ಆದಾಯ-ಖರ್ಚು</a>
+            </li>
+          </ul>
+        <!-- Logout Button aligned to the right -->
+        <form class="d-flex ms-auto logout-btn" action="{% url 'userlogout' %}" method="post">
+            {% csrf_token %}
+            <button class="btn btn-outline-light" type="submit">Logout</button>
+          </form>
+      </div>
+    </div>
+  </nav>

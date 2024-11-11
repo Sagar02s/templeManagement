@@ -1,0 +1,84 @@
+.card {
+      position: relative;
+      border: none;
+      overflow: hidden;
+      border-radius: 10px;
+      height: 100%;
+    }
+
+    .card-img {
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+      width: 100%;
+    }
+
+    .card-body {
+        top: 25%;
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .card-title {
+        top: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffffff !important;
+    }
+
+    .card-text {
+      color: #ffffff;
+    }
+
+    .price {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .card-container {
+      margin-bottom: 20px;
+    }
+
+    .sevas-list{
+        max-height: 650px;  /* Set a maximum height for the section */
+      overflow-y: auto; 
+    }
+
+    .sevas-list::-webkit-scrollbar {
+        width: 5px;  /* Set the width of the scrollbar */
+        height: 5px; /* Set the height for horizontal scrollbar (if needed) */
+      }
+      
+      /* The part of the scrollbar that you can drag (thumb) */
+      .sevas-list::-webkit-scrollbar-thumb {
+        background-color: rgb(255, 147, 58); /* Color of the draggable part of the scrollbar */
+        border-radius: 10px;     /* Rounded corners for the thumb */
+        border: 1px solid transparent; /* Adds space between the thumb and track */
+        background-clip: padding-box;  /* Ensures the background-color doesn't overlap with border */
+      }
+      
+      /* The part of the scrollbar track (the background of the scrollbar) */
+      .sevas-list::-webkit-scrollbar-track {
+        background: #f1f1f1;  /* Light gray background for the track */
+        border-radius: 10px;   /* Round the corners of the track */
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);  /* Optional: subtle shadow inside the track */
+      }
+      
+      /* Hover effect for the scrollbar thumb */
+      .sevas-list::-webkit-scrollbar-thumb:hover {
+        background-color: rgb(255, 115, 0);  /* Darker color when hovered */
+      }
+      
+      /* Optional: Customize the scrollbar on Firefox */
+      .sevas-list {
+        scrollbar-width: thin;  /* Thin scrollbar */
+        scrollbar-color: rgb(255, 147, 58) #f1f1f1; /* Thumb color and track color */
+      }

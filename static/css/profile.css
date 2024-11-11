@@ -1,0 +1,40 @@
+.line-input {
+    border: none;
+    border-bottom: 2px solid #007bff; /* Blue underline */
+    outline: none;
+    background: transparent;
+  }
+
+  /* Add some space between labels and inputs */
+  .line-input:focus {
+    border-color: #0056b3; /* Darker blue when focused */
+    box-shadow: none;
+  }
+
+  .form-label {
+    font-weight: bold;
+  }
+
+  /* Optional: Style the form container */
+  .form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+
+.card-profile{
+    background: rgba(255, 255, 255, 0.1) !important; /* Semi-transparent white background */
+    border-radius: 15px;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    color: white; /* Text color */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+}
+
+.card-header{
+    /* background-color: #eb8a64d8 !important; */
+    background-color: #a7f3d0 !important;
+}

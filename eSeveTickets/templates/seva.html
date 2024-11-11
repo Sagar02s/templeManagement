@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Seva / ಸೇವೆ{% endblock title %}
+{% block styles %}
+<link rel="stylesheet" href="{% static "css/seve.css" %}">
+{% endblock styles %}
+{% block content %}
+<!-- Container -->
+<div class="container-fluid my-5">
+    <div class="row mb-4">
+        <!-- Image section spanning 4 columns -->
+        <div class="col-md-4">
+            <img src="{% static 'images/track_logo.png' %} " class="img-fluid" alt="Section Image">
+        </div>
+
+        <!-- Second Section: Cards in 8 columns -->
+        <div class="col-md-8">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 sevas-list">
+
+                {% for seva in sevas %}
+                <div class="col card-container">
+                    <div class="card">
+                        <!-- Image Background -->
+                        <div class="card-img" style="background-image: url('{% static "images/track_logo.png" %}');">
+                            <!-- Price -->
+                            <span class="price">{{seva.price}}</span>
+
+                            <div class="card-body">
+                                <h5 class="card-title">{{seva.Name}}</h5>
+                                <p class="card-text">{{seva.kannada}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+
+            </div>
+        </div> <!-- End of row -->
+    </div> <!-- End of container -->
+    {% endblock content %}

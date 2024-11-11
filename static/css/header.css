@@ -1,0 +1,47 @@
+.navbar{
+    background-color: #eb8a64d8 !important;
+    height: 5rem;
+}
+
+.navbar-collapse {
+    background-color: #eb8a64d8 !important; /* Same as navbar background */
+    text-align: center;
+  }
+
+  .logout-btn {
+    float: right;
+  }
+
+  .navbar-toggler:focus,
+  .navbar-toggler-icon:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: none; /* Remove any shadow effect that may appear on focus */
+  }
+  .navbar-logo{
+    width: 5rem;
+    height: 5rem;
+  }
+
+  nav .navbar-nav li a{
+    color: white !important;
+    }
+
+    .navbar .dropdown-menu {
+        background-color: #eb8a64d8; /* Change this to your desired color */
+      }
+  
+      /* Change the color of links inside the dropdown when hovered */
+      .navbar .dropdown-menu .dropdown-item:hover {
+        background-color: #eb8a64d8; /* Darker shade when hovering */
+        color: #fff; /* Optional: Change text color on hover */
+      }
+  
+      /* Optional: Change dropdown toggle color */
+      .navbar .dropdown-toggle {
+        color: #eb8a64d8;
+      }
+
+.nav-item :hover,navbar .dropdown-toggle {
+    background-color: white;
+    color: black !important;
+}

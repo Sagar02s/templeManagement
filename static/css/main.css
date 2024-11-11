@@ -1,0 +1,36 @@
+body{
+  background-image: url('/static/images/temple_bell12.jpg');
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Optional: Makes the background fixed during scrolling */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 100vh; /* Makes sure the background image fills the viewport height */
+    margin: 0;
+    color: aliceblue;
+}
+.card-login{
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+  border-radius: 15px;
+  padding: 30px;
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 300px; /* Card width */
+  color: white; /* Text color */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+}
+.btn-primary{
+  background-color: #a7f3d0;
+  border: none;
+  color: black;
+}
+.btn-primary:hover{
+  background-color: #5ee2a5;
+  border: none;
+  color:black;
+}
+
+.logo{
+  width: 4rem;
+  height: 4rem;
+}
