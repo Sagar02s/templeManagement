@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login as dj_login, update_session_
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from django.contrib.auth.decorators import login_required
+from .models import Item
 
 from eSeveTickets.models import Company, State
 
@@ -22,7 +23,7 @@ def userlogin(request):
             user = authenticate(request,username=uname,password=passwd)
             if user:
                 dj_login(request,user)
-                return HttpResponseRedirect(reverse('home'))
+                return HttpResponseRedirect(reverse('seva'))
             else:
                 messages.error(request,"Invalid Credentials")
                 return render(request,'login.html')
@@ -69,21 +70,10 @@ def provision(request):
 
 @login_required(login_url='userlogin')
 def seva(request):
-    sevas= [
-        {"Name":"Alankar","kannada":"ಅಲಂಕಾರ","price":"₹500"},
-        {"Name":"Alankar","kannada":"ಅಲಂಕಾರ","price":"₹500"},
-        {"Name":"Alankar","kannada":"ಅಲಂಕಾರ","price":"₹500"},
-        {"Name":"Alankar","kannada":"ಅಲಂಕಾರ","price":"₹500"},
-        {"Name":"Alankar","kannada":"ಅಲಂಕಾರ","price":"₹500"},
-        {"Name":"Alankar","kannada":"ಅಲಂಕಾರ","price":"₹500"},
-        {"Name":"Alankar","kannada":"ಅಲಂಕಾರ","price":"₹500"},
-        {"Name":"Alankar","kannada":"ಅಲಂಕಾರ","price":"₹500"},
-        {"Name":"Alankar","kannada":"ಅಲಂಕಾರ","price":"₹500"},
-        {"Name":"Alankar","kannada":"ಅಲಂಕಾರ","price":"₹500"},
-        {"Name":"Alankar","kannada":"ಅಲಂಕಾರ","price":"₹500"},
-        {"Name":"Alankar","kannada":"ಅಲಂಕಾರ","price":"₹500"}
-
-        ]
+    sevas= []
+    seva = Item.objects.filter(category="Seva")
+    for seve in seva:
+        sevas.append({"Name":seve.item_name,"kannada":seve.language, "price":seve.selling_price})
     return render(request,'seva.html',{'sevas':sevas})
 
 @login_required(login_url='userlogin')
